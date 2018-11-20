@@ -1,0 +1,12 @@
+language: go
+
+go:
+  - 1.5
+  - 1.6
+  - tip
+
+script:
+  - go get -u github.com/golang/lint/golint
+  - test -z "$(gofmt -l .)"
+  - test -z "$(golint ./...)"
+  - go test -v ./...
