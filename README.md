@@ -45,7 +45,7 @@ Functions are exposed for the lower-level operations, as well, in case you need 
 // Given a request, returns the `<Content-Type>,<MD5>,<URI>,<Date>` string used for the HMAC.
 str := apiauth.CanonicalString(req)
 
-// Given a canonical string and secret key, computes the signature using HMAC-SHA1:
+// Given a canonical string and secret key, computes the signature using HMAC-SHA256:
 signature := apiauth.Compute(str, "secret_key")
 
 // A helper for generating a RFC1123-formatted date using the current time:
